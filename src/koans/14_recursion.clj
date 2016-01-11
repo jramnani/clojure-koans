@@ -3,18 +3,22 @@
 
 (defn is-even? [n]
   (if (= n 0)
-    __
-    (___ (is-even? (dec n)))))
+    true
+    (= 0 (mod n 2) (is-even? (dec n)))))
 
 (defn is-even-bigint? [n]
   (loop [n   n
          acc true]
     (if (= n 0)
-      __
+      acc
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (loop [coll coll
+         result '()]
+    (if (empty? coll)
+      result
+      (recur (rest coll) (cons (first coll) result)))))
 
 (defn factorial [n]
   __)
